@@ -1,0 +1,19 @@
+<%- include('../partials/header.ejs') %> 
+    <h1>Make a new booking note</h1>
+    <form action="/bookings" method="post">
+        <section>
+            <label for="clientName">Enter your name: </label>
+            <input type="text" name="clientName" placeholder="Full Name" id="clientName">
+        </section>
+        <section>
+            <label for="numOfGuests">Number of guests (1-10): </label>
+            <input type="number" name="numOfGuests" id="numOfGuests" placeholder="1" min="1" max="10">
+        </section>
+        <section>
+            <label for="clientNote">Note text</label>
+            <br>
+            <textarea name="clientNote" id="clientNote" cols="30" rows="6"></textarea>
+        </section>
+        <button>Submit</button>
+    </form>
+    <%- include('../partials/footer.ejs') %> 

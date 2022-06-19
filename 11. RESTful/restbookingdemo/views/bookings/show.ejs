@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %> 
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-8 ">
+            <h1>Room: <%= booking.roomId %></h1>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-6">
+            <h2>Client Name: <%= booking.clientName %> , Guests: <%= booking.numOfGuests %> </h2>
+            <p>Client Notes: <%= booking.notes  %> </p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-6">
+            <nav class="nav">
+                <a class="nav-link" href="/bookings">Back</a>
+                <a class="nav-link" href="/bookings/<%= booking.roomId %>/edit"> Edit Booking </a>
+            </nav>
+            <form method="post" action="/bookings/<%= booking.roomId %>?_method=DELETE">
+            <button class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    
+
+<%- include('../partials/footer.ejs') %> 

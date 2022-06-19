@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs') %>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-6">
+                <h1>Booking Notes</h1>
+                <ul class="list-group">
+                <% for (let book of bookings) { %>
+                    <li class="list-group-item"> <%= book.notes %> - <b> <%= book.clientName %>(<%= book.numOfGuests %>)  </b> 
+                          <a class="link-info" href="bookings/<%= book.roomId%> "> Details </a>
+                    </li> 
+                    
+                <% } %>  
+            </ul>
+            <div class="nav justify-content-center">
+                <a href="bookings/new" class="nav-link "> Make a new booking </a>
+            </div>
+        </div>
+    </div>
+    
+</div>   
+<%- include('../partials/footer.ejs') %> 

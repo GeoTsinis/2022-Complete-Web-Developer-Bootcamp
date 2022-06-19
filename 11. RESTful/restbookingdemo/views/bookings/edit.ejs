@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs') %> 
+    <h1>Edit</h1>
+    <form method="post" action="/bookings/<%= booking.roomId %>?_method=PATCH ">
+        <section>
+            <label for="numOfGuests"> Change number of guests: </label>
+            <input type="number" min="1" max="10" id="numOfGuests" name="numOfGuests" value= <%= booking.numOfGuests %> > 
+        </section>
+        <section>
+            <label for="note">Change your note: </label> <br>
+            <textarea name="note" id="note" cols="30" rows="10"> <%= booking.notes %>  </textarea>
+        </section>
+        
+        <button>Save</button>
+    </form>
+    <%- include('../partials/footer.ejs') %> 
